@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>BUCLE DE 5 ITERACIONES</title>
+        <link rel="stylesheet" href="Estilo.">
+    </head>
+
+    <body>
+
+        <script type="text/javascript">
+            
+            function operaciones(){
+
+                var n1 = parseInt(Number(document.getElementById('n1').value));
+                var n2 = parseInt(Number(document.getElementById('n2').value));
+                var resultado = 0;
+                var mensaje = '';
+                document.getElementById('wase').innerHTML = '';
+
+                for (i = 1; i<=5; i++) {
+                    switch (i) {
+                        case 1:
+                            
+                            resultado = 0;
+                            resultado = n1 + n2;
+                            mensaje += n1.toString()+' + '+n2.toString()+' = '+resultado+'\n';
+                            break;
+                    
+                        case 2:
+                            resultado = 0;
+                            resultado = n1 - n2;
+                            mensaje += n1.toString()+' - '+n2.toString()+' = '+resultado+'\n';
+                            break;
+
+                        case 3:
+                            resultado = 0;
+                            resultado = n1 * n2;
+                            mensaje += n1.toString()+' X '+n2.toString()+' = '+resultado+'\n';
+                            break
+
+                        case 4:
+                            resultado = 0;
+
+                            if (n2 == 0) {
+                                mensaje += n1.toString()+' / '+n2.toString()+' = indefinido\n';
+                                break;
+                            }else{
+                                resultado = n1 / n2;
+                                mensaje += n1.toString()+' / '+n2.toString()+' = '+resultado+'\n';
+                                break
+                            }
+
+                        case 5:
+                            resultado = 0;
+                            if (n2 == 0) {
+                                mensaje += n1.toString()+' MOD '+n2.toString()+' = indefinido';
+                                break;
+                            }else{
+                                resultado = n1 % n2;
+                                mensaje += n1.toString()+' MOD '+n2.toString()+' = '+resultado;
+                                break
+                            }
+
+                        default:
+                            break;
+                    }
+                }
+
+
+
+                document.getElementById('wase').value = mensaje;
+                
+
+            }
+            
+            
+        </script>
+
+
+        <div class="box">
+            <form action="">
+                <h1>Cálculo de dos números</h1>
+                
+                <p class="parrafo">
+                    Ingresar dos números para realizar las siguientes operaciones: Suma Resta Multiplicacion Division Modulo
+                </p><br>
+                <div class="datos">
+                    <label class="label" for="numero1">Primer número:</label>
+                    <input class="numero" type="text" id="n1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                </div><br>
+        
+                <div class="datos">
+                    <label  class="label" for="numero2">Segundo número:</label>
+                    <input class="numero"  type="text" id="n2" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                    <br>
+                </div><br>
+        
+
+                
+
+                <div class="contenedorTA" >
+                    <textarea class="textarea" name="sape" id="wase" cols="30" rows="5" readonly="readonly">
+
+                    </textarea>
+                </div>
+                    
+                <br>
+
+                <div>
+                    <input id="boton" class="boton" type="button" value="Calcular" onclick="operaciones()" />
+                </div>
+
+            </form>
+
+            
+
+        </div>
+    </body>
+</html>
